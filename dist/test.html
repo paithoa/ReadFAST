@@ -10,36 +10,51 @@
 <div class= "top">
 <strong> Read faster With Speed and Speech </strong> 
 <br>
-
-Paste to the button and press start. If you want to adjust the speed and size use the button
+<br>
+Paste to the button and press start. Default speed is fast enough to read and absorb materials
+<br>
+<br>
+To reset and adjust the speed and font size choose the button then click paste test again 
+<br>
+<br>
+Some suggestion : Try to copy each paragraph/per pages
 </div>
-
-<div class="border">
-<div id = "currentText">
-</div>
-</div>
+<br>
 <button onclick = "paste()" id="pastetext" >Paste Text! </button>
 
-<select>
-  <option value="volvo">Speed</option>
-  <option value="opel">1.25x</option>
-  <option value="audi">1.5x</option>
-  <option value="audi">2x</option>
+<select id = "Speed">
+  <option value="speedtitle">Speed Default</option>
+  <option value="125">1.25x</option>
+  <option value="15">1.5x</option>
+  <option value="2">2x</option>
 </select>
-<select>
-  <option value="volvo">Font Size</option>
-  <option value="opel">small</option>
-  <option value="audi">medium</option>
-  <option value="audi">large</option>
-  <option value="audi">extra large</option>
+<select id = "Font">
+  <option value="fonttitle">Font Size Default</option>
+  <option value="small">small</option>
+  <option value="medium">medium</option>
+  <option value="large">large</option>
+  <option value="extra large">extra large</option>
 </select>
+<strong> Pasted Text: </strong>
 
+
+<div id = "currentText">
+</div>
+
+<div class="border" id ="insideborder">
+
+</div>
+
+
+
+<button id="play"> Start </button>
 <input id ="pause" type="button" value="Pause" onClick="document.getElementById('anotherdiv').stop();">
-
-<button id="play"> Play </button>
 <button id="resume" onClick="document.getElementById('anotherdiv').start();"> Resume </button>
-
+ <!-- <button onClick="reset()"> Reset </button> -->
 <!--scrollamount="5" control the speed-->
+<br>
+
+
 </body>
 
 </html>
