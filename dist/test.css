@@ -1,0 +1,19 @@
+.border{
+    border-style:solid;
+    font-size:20px;
+}
+
+#another_div
+{
+    white-space:pre-wrap;
+    font-size:1.5em;
+    position:fixed;
+    height:6%;
+    display:block;
+    background:#FFF;
+    width:100%;
+    text-align:center;
+    top:30%;
+    padding-top:1%;
+    white-space:nowrap;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src = "test.js"></script>
+  <link rel="stylesheet" href="test.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script  src ="main.js"></script>
+</head>
+<body>
+<div class= "top">
+<strong> Read faster With Speed and Speech </strong> 
+<br>
+
+Paste to the button and press start. If you want to adjust the speed and size use the button
+</div>
+
+<div class="border">
+<div id = "currentText">
+</div>
+</div>
+<button onclick = "paste()" id="pastetext" >Paste Text! </button>
+
+<select>
+  <option value="volvo">Speed</option>
+  <option value="opel">1.25x</option>
+  <option value="audi">1.5x</option>
+  <option value="audi">2x</option>
+</select>
+<select>
+  <option value="volvo">Font Size</option>
+  <option value="opel">small</option>
+  <option value="audi">medium</option>
+  <option value="audi">large</option>
+  <option value="audi">extra large</option>
+</select>
+
+<input id ="pause" type="button" value="Pause" onClick="document.getElementById('anotherdiv').stop();">
+
+<button id="play"> Play </button>
+<button id="resume" onClick="document.getElementById('anotherdiv').start();"> Resume </button>
+
+<!--scrollamount="5" control the speed-->
+</body>
+
+</html>
