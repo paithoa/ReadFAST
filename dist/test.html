@@ -8,26 +8,27 @@
 </head>
 <body>
 <div class= "top">
-<strong> Read faster With Speed and Speech </strong> 
-<br>
-<br>
+<strong> Read faster With Adjustable Moving Text and Speech </strong> 
+<hr>
+
 Paste to the button and press start. Default speed is fast enough to read and absorb materials
-<br>
-<br>
+<p>
 To reset and adjust the speed and font size choose the button then click paste test again 
-<br>
-<br>
-Some suggestion : Try to copy each paragraph/per pages
+<p>
+note : Speed of text will adjust with speed of speech
+<p>
+Some suggestion : Try to copy each paragraph/per pages, If you make changes in speed and font, click make changes 
 </div>
-<br>
+<p>
 <button onclick = "paste()" id="pastetext" >Paste Text! </button>
 
 <select id = "Speed">
-  <option value="speedtitle">Speed Default</option>
-  <option value="125">1.25x</option>
-  <option value="15">1.5x</option>
-  <option value="2">2x</option>
+  <option value="13.5">Speed Default</option>
+  <option value="15">1.25x</option>
+  <option value="20">1.5x</option>
+  <option value="22.5">2x</option>
 </select>
+<!--
 <select id = "Font">
   <option value="fonttitle">Font Size Default</option>
   <option value="small">small</option>
@@ -35,7 +36,13 @@ Some suggestion : Try to copy each paragraph/per pages
   <option value="large">large</option>
   <option value="extra large">extra large</option>
 </select>
+-->
+
+
+<button id="changes" disabled onclick="paste()"> Make Changes </button>
+<p>
 <strong> Pasted Text: </strong>
+
 
 
 <div id = "currentText">
@@ -46,10 +53,10 @@ Some suggestion : Try to copy each paragraph/per pages
 </div>
 
 
-
-<button id="play"> Start </button>
+<br>
+<button id="play" onClick = "this.disabled = true;document.getElementById('changes').disabled = false;"> Start </button>
 <input id ="pause" type="button" value="Pause" onClick="document.getElementById('anotherdiv').stop();">
-<button id="resume" onClick="document.getElementById('anotherdiv').start();"> Resume </button>
+<button id="resume" onclick= "onResume()"> Resume </button>
  <!-- <button onClick="reset()"> Reset </button> -->
 <!--scrollamount="5" control the speed-->
 <br>

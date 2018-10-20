@@ -12,12 +12,13 @@ const _addVoicesList = (voices) => {
 }
 
 function _init() {
+	
 	const speech = new Speech()
 	console.log(speech)
 	speech.init({
 		'volume': 0.5,
 		'lang': 'en-GB',
-		'rate': 1,
+		'rate': 1.0,
 		'pitch': 1,
 		//'voice':'Google UK English Male',
 		//'splitSentences': false,
@@ -40,26 +41,37 @@ function _init() {
 }
 
 function _prepareSpeakButton(speech) {
+	
 	const speakButton = document.getElementById('play')
 	const pauseButton = document.getElementById('pause')
 	const resumeButton = document.getElementById('resume')
 	const textarea = document.getElementById('currentText')
 	const languages = document.getElementById('languages')
 	speakButton.addEventListener('click', () => {
-	
+		let desiredOption = $("#Speed").val();
 		const language = languages.value
 		const voice = languages.options[languages.selectedIndex].dataset.name
 		if(language) speech.setLanguage(languages.value)
+
+		if(desiredOption == 13.5) speech.rate = 1
+		else if(desiredOption == 15) speech.rate=1.15
+		else if (desiredOption == 20) speech.rate =1.3
+		else if (desiredOption == 22.5) speech.rate = 1.5
+		
+
 		
 	if(voice) speech.setVoice(voice)
 		console.log(textarea.innerHTML)
+		console.log(desiredOption)
+		console.log(speech.rate)
+		console.log(speech)
 		speech.speak({
 			text: textarea.innerHTML,
 			queue: false,
 			listeners: {
 				onstart: () => {
 					console.log("Start utterance")
-					startMarquee()
+					startMarquee(desiredOption)
 				},
 				onend: () => {
 					console.log("End utterance")
@@ -89,3 +101,4 @@ function _prepareSpeakButton(speech) {
 }
 
 _init()
+
